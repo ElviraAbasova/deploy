@@ -1,0 +1,563 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  .modal {
+    background: white;
+    padding: 3rem 6rem ;
+    border-radius: 8px;
+    position: relative;
+    width: 40%;
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      
+    }
+    .imgs{
+      display: flex;
+      .img{
+        img{
+          width: 100%;
+        }
+      }
+      .img:nth-child(1){
+        max-width: 40%;
+    
+        
+      }
+      
+
+    
+    }
+    .top{
+      display: flex;
+      flex-direction: column;
+      h2{
+        padding-top: 1rem;
+        font-size: 1.8rem;
+        span{
+          color: #f47107;
+        }
+      }
+    }
+   
+    form{
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .input-group {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        label{
+          font-size: 1.4rem;
+        }
+        input {
+          width: 100%;
+          padding: 0.6rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          outline-color: #f47107;
+        }
+        input[type="number"] {
+          -webkit-appearance: textfield;
+             -moz-appearance: textfield;
+                  appearance: textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none;
+        }
+      }
+      .dateCvv{
+        display: flex;
+        justify-content: space-between;
+      }
+      button{
+        cursor: pointer;
+        background-color: #f47107;
+        border-radius: 0.6rem;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        width: 50%;
+        font-size: 1.4rem;
+        
+
+      }
+    }
+    
+  }
+}
+
+
+
+
+
+
+
+
+#basket {
+  padding-top: 20rem;
+  padding-bottom: 10rem;
+  .container {
+    
+    .title {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-size: 3rem;
+      }
+    }
+    .basket {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 3rem;
+      width: 100%;
+      .leftSide {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+
+        .product {
+          text-decoration: none;
+          color: black;
+          cursor: pointer;
+            position: relative;
+          transition: all 0.5s ease-in-out;
+          border: 1.5px solid transparent;
+          box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+          border-radius: 2rem;
+          padding: 3rem;
+          display: grid;
+          grid-template-columns: repeat(4, auto);
+          align-items: center;
+          gap: 4em;
+          .col {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            .imgBox {
+              width: 45%;
+              max-width: 30rem;
+              img {
+                width: 100%;
+              }
+            }
+            h4 {
+              width: 55%;
+
+              word-break: break-all;
+              width: 30rem;
+            }
+            h5 {
+              font-size: 1.6rem;
+              color: #f47107;
+            }
+            .minus,
+            .plus {
+              width: 3.5rem;
+              height: 3.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease-in-out;
+              border-radius: 1rem;
+              border: 1px solid rgba(50, 50, 105, 0.15);
+              font-size: 1.4rem;
+            }
+            .minus:hover,
+            .plus:hover {
+              background-color: #8d19e8;
+              color: white;
+              border-color: #8d19e8;
+            }
+            .total {
+              display: flex;
+              gap: 1rem;
+              h5 {
+                color: gray;
+              }
+            }
+          }
+          .col:nth-child(1) {
+            display: flex;
+            gap: 1rem;
+          }
+          $background-color_1: #f47107;
+          $background-color_2: rgb(255, 69, 69);
+
+          .button {
+            top: 1rem;
+            right: 1rem;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: $background-color_1;
+            border: none;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+            gap: 2px;
+            &:hover {
+              transition-duration: 0.3s;
+              background-color: $background-color_2;
+              align-items: center;
+              gap: 0;
+              .bin-top {
+                transition-duration: 0.5s;
+                transform: rotate(160deg);
+              }
+            }
+          }
+          .svgIcon {
+            width: 10px;
+            transition-duration: 0.3s;
+            path {
+              fill: white;
+            }
+          }
+          .bin-top {
+            transform-origin: bottom right;
+          }
+        }
+        .product:hover {
+          border: 1.5px dashed #f47107;
+        }
+      }
+      .rightSide {
+   
+        height: max-content;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+          rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        padding: 5rem 3rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .top {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding-bottom: 3rem;
+          border-bottom: 1px solid rgba(50, 50, 105, 0.15);
+          .row {
+            color: gray;
+            display: flex;
+            align-items: center;
+            gap: 9rem;
+            font-size: 1.7rem;
+          }
+        }
+        .bottom {
+          padding-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          .row {
+            display: flex;
+            align-items: center;
+            gap: 9rem;
+            font-size: 2rem;
+          }
+          button {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background-color: #8d19e8;
+            padding: 1rem;
+            border: none;
+            border-radius: 2rem;
+            color: white;
+            font-size: 1.5rem;
+          }
+          button:hover {
+            background-color: #f47107;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .modal-overlay {
+   
+    .modal {
+
+      padding: 3rem;
+      width: 50%;
+  
+  
+      .top{
+        
+        h2{
+          padding-top: 1rem;
+          font-size: 1.6rem;
+        
+        }
+      }
+     
+      form{
+
+        .input-group {
+  
+          label{
+            font-size: 1.3rem;
+          }
+          input {
+            width: 70%;
+   
+          }
+  
+        }
+        .dateCvv{
+         justify-content: flex-start;
+         gap: 0.5rem;
+          
+        }
+        button{
+          width: 40%;
+          font-size: 1.3rem;
+          
+  
+        }
+      }
+      
+    }
+  }
+  #basket {
+    .container {
+      padding: 0 4rem;
+      .basket {
+        grid-template-columns: repeat(1, 1fr);
+        .leftSide {
+          .product {
+            display: flex;
+            width: 100%;
+            .col {
+              font-size: 1.4rem;
+              h4 {
+                width: 25rem;
+              }
+            }
+          }
+        }
+        .rightSide {
+          margin: auto;
+          width: 70%;
+          align-items: normal;
+          .top {
+            .row {
+              justify-content: space-between;
+            }
+          }
+          .bottom {
+            .row {
+              justify-content: space-between;
+             
+            }
+            button{
+              width: 70%;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal-overlay {
+
+    .modal {
+      padding: 2rem;
+  
+  
+      
+      .top{
+
+        align-items: center;
+        
+        h2{
+
+          font-size: 1.4rem;
+        
+        }
+      }
+     
+      form{
+
+        align-items: center;
+        .input-group {
+     
+          label{
+          
+            font-size: 1.3rem;
+          }
+          input{
+            width: 100%;
+          }
+         
+        }
+        .dateCvv{
+          flex-direction: column;
+        }
+        button{
+          cursor: pointer;
+          background-color: #f47107;
+          border-radius: 0.6rem;
+          color: white;
+          border: none;
+          padding: 0.5rem;
+          width: 50%;
+          font-size: 1.4rem;
+          
+  
+        }
+      }
+      
+    }
+  }
+  
+  
+  #basket {
+    .container {
+      padding: 2rem;
+      .title {
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+      .basket {
+        .leftSide {
+          .product {
+            padding: 2rem;
+            .col {
+              gap: 1rem;
+              font-size: 1.4rem;
+             .imgBox{
+              width: 80%;
+             }
+              h4 {
+                width: 100%;
+                text-align: center;
+              }
+              h5 {
+                font-size: 1.6rem;
+              }
+              .minus,
+              .plus {
+                width: 3rem;
+                height: 3re;
+              }
+            }
+            .col:nth-child(1) {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #basket {
+    .container {
+      padding: 0 5rem;
+      .title {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+      .basket {
+        .leftSide {
+          .product {
+            flex-direction: column;
+            gap: 4rem;
+            .col {
+              gap: 0.5rem;
+            }
+          }
+        }
+        .rightSide {
+          width: 100%;
+          .top {
+            .row {
+              font-size: 1.4rem;
+            }
+          }
+          .bottom {
+            .row {
+              font-size: 1.6rem;
+            }
+            button {
+              padding: 0.7rem;
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #basket {
+    .container {
+      padding: 0 3rem;
+      .title {
+      }
+      .basket {
+        .rightSide {
+          height: 25rem;
+          padding: 2rem;
+          width: 100%;
+          .top {
+            .row {
+              font-size: 1.4rem;
+            }
+          }
+          .bottom {
+            .row {
+              font-size: 1.6rem;
+            }
+            button {
+              padding: 0.7rem;
+              font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
